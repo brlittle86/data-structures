@@ -7,7 +7,7 @@ namespace Strings
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please enter a string to be reversed:");
+            Console.WriteLine("Please enter a string that will be reversed:");
             StringReversal(Console.ReadLine());
         }
 
