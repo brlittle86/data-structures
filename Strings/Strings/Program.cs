@@ -11,9 +11,20 @@ namespace Strings
             StringReversal(Console.ReadLine());
         }
 
+        //static void StringReversal(string entry)
+        //{
+        //    Console.WriteLine(new string(entry.ToCharArray().Reverse().ToArray()));
+        //    Console.Read();
+        //}
+
         static void StringReversal(string entry)
         {
-            Console.WriteLine(new string(entry.ToCharArray().Reverse().ToArray()));
+            string output = "";
+            for (int i = (entry.Length - 1); i > -1; i--)
+            {
+                output += entry[i];
+            }
+            Console.WriteLine(output);
             Console.Read();
         }
 
