@@ -8,35 +8,22 @@ namespace CatGarden
         {
             Console.WriteLine("Making a Cat Garden");
 
-            Array[] catGarden = CatGarden();
-            foreach (var item in catGarden)
+            for (int i = 0; i < 5; i++)
             {
-                foreach (var thing in item)
+                for (int j = 0; j < 5; j++)
                 {
-                    Console.WriteLine(thing);
+                    if ((i + j) % 2 == 0)
+                    {
+                        Console.Write("Catnip ");
+                    }
+                    else
+                    {
+                        Console.Write("Mint ");
+                    }
                 }
+                    Console.WriteLine();
             }
             Console.Read();
-        }
-
-        static Array[] CatGarden()
-        {
-            Array[] garden = new Array[5];
-            for (int i = 0; i < garden.Length; i++)
-            {
-                if ((i + 1) % 2 != 0)
-                {
-                    string[] rowCatnip = new string[] { "catnip", "catnip", "catnip", "catnip", "catnip" };
-                    garden[i] = rowCatnip;
-                }
-                else
-                {
-                    string[] rowMint = new string[] { "mint", "mint", "mint", "mint", "mint" };
-                    garden[i] = rowMint;
-                }
-            }
-
-            return garden;
         }
     }
 }
