@@ -20,6 +20,7 @@ namespace FindMiddleNodeLinkedList
             myLinkedList.AddNode(162);
             myLinkedList.AddToFirst(0);
             myLinkedList.ViewLinkedList();
+            myLinkedList.FindMiddleNode();
             Console.Read();
         }
     }

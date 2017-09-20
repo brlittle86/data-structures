@@ -42,5 +42,25 @@ namespace FindMiddleNodeLinkedList
             Next = new Node(data);
             Next.Next = runner;
         }
+
+        public void FindMiddleNode()
+        {
+            Node runner = Next;
+            double counter = 1;
+            while (runner.Next != null)
+            {
+                runner = runner.Next;
+                counter++;
+            }
+            counter = Math.Floor((counter / 2));
+            Console.WriteLine($"The middle is at the #{counter} Node in the Linked List.");
+            runner = Next;
+            while (counter > 1)
+            {
+                runner = runner.Next;
+                counter--;
+            }
+            Console.WriteLine($"The middle Node contains the data: {runner.Data}.");
+        }
     }
 }
