@@ -79,5 +79,28 @@ namespace NthNodeFromEnd
             }
             Console.WriteLine(walker.Data);
         }
+
+        public void DataNFromEnd(int data)
+        {
+            Node runner = Next;
+            int counter = 1;
+            while (runner.Next != null && runner.Data != data)
+            {
+                runner = runner.Next;
+            }
+            if (runner.Data != data)
+            {
+                Console.WriteLine("Data wasn't found.");
+            }
+            else
+            {
+                while (runner.Next != null)
+                {
+                    runner = runner.Next;
+                    counter++;
+                }
+                Console.WriteLine($"{data} found {counter} nodes from the end.");
+            }
+        }
     }
 }
