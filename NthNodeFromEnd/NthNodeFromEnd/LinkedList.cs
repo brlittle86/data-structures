@@ -60,5 +60,24 @@ namespace NthNodeFromEnd
             }
             Console.WriteLine($"The middle of this Linked List is the #{counter} node, and contains the data: {walker.Data}.");
         }
+
+        public void NthNodeFromEnd(int n)
+        {
+            Node runner = Next;
+            Node walker = Next;
+            for (int i = 1; i < n; i++)
+            {
+                if (runner.Next != null)
+                {
+                    runner = runner.Next;
+                }
+            }
+            while (runner.Next != null)
+            {
+                walker = walker.Next;
+                runner = runner.Next;
+            }
+            Console.WriteLine(walker.Data);
+        }
     }
 }

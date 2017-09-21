@@ -21,6 +21,7 @@ namespace NthNodeFromEnd
             myLinkedList.AddToFirst(0);
             myLinkedList.ViewLinkedList();
             myLinkedList.FindMiddleNode();
+            myLinkedList.NthNodeFromEnd(4);
             Console.Read();
         }
     }
