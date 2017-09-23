@@ -13,6 +13,8 @@ namespace DoublyLinkedLists
         public DNode(int data)
         {
             Data = data;
+            Next = null;
+            Previous = null;
         }
     }
 }
