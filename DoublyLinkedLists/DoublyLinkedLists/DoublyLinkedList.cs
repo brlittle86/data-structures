@@ -69,5 +69,18 @@ namespace DoublyLinkedLists
                 }
             }
         }
+
+        public void ViewList()
+        {
+            DNode runner = Head;
+            string printOut = "";
+            while (runner.Next != null)
+            {
+                printOut += runner.Data + " <-> ";
+                runner = runner.Next;
+            }
+            printOut += runner.Data + " -> null";
+            Console.WriteLine(printOut);
+        }
     }
 }
