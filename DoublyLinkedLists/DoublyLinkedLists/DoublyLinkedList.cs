@@ -20,5 +20,16 @@ namespace DoublyLinkedLists
             Head.Next = current;
             current.Previous = Head;
         }
+
+        public void AddLast(int data)
+        {
+            DNode runner = Head;
+            while (runner.Next != null)
+            {
+                runner = runner.Next;
+            }
+            runner.Next = new DNode(data);
+            runner.Next.Previous = runner;
+        }
     }
 }
