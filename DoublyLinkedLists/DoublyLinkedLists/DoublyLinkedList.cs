@@ -16,8 +16,10 @@ namespace DoublyLinkedLists
         public void AddFirst(int data)
         {
             DNode current = Head;
-            Head = new DNode(data);
-            Head.Next = current;
+            Head = new DNode(data)
+            {
+                Next = current
+            };
             current.Previous = Head;
         }
 
@@ -28,8 +30,10 @@ namespace DoublyLinkedLists
             {
                 runner = runner.Next;
             }
-            runner.Next = new DNode(data);
-            runner.Next.Previous = runner;
+            runner.Next = new DNode(data)
+            {
+                Previous = runner
+            };
         }
 
         public DNode RemoveFirst()
