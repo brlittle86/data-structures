@@ -40,5 +40,34 @@ namespace DoublyLinkedLists
             current.Next = null;
             return current;
         }
+
+        public DNode RemoveByData(int data)
+        {
+            DNode runner = Head;
+            if (runner.Data == data)
+            {
+                return RemoveFirst();
+            }
+            else
+            {
+                while (runner.Next != null && runner.Data != data)
+                {
+                    runner = runner.Next;
+                }
+                if (runner.Data != data)
+                {
+                    Console.WriteLine("Did not find data!");
+                    return runner;
+                }
+                else
+                {
+                    runner.Previous.Next = runner.Next;
+                    runner.Next.Previous = runner.Previous;
+                    runner.Next = null;
+                    runner.Previous = null;
+                    return runner;
+                }
+            }
+        }
     }
 }
