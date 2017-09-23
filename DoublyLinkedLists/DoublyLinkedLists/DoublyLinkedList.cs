@@ -31,5 +31,14 @@ namespace DoublyLinkedLists
             runner.Next = new DNode(data);
             runner.Next.Previous = runner;
         }
+
+        public DNode RemoveFirst()
+        {
+            DNode current = Head;
+            Head = Head.Next;
+            Head.Previous = null;
+            current.Next = null;
+            return current;
+        }
     }
 }
