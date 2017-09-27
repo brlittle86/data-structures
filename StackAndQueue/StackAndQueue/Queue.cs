@@ -4,11 +4,8 @@ using System.Text;
 
 namespace StackAndQueue
 {
-    class Queue<T>
+    class Queue<T> : LinkedList<T>
     {
-        public Node<T> Head { get; set; }
-        public Node<T> Tail { get; set; }
-
         public Queue(T data)
         {
             Head = new Node<T>(data);
@@ -23,10 +20,7 @@ namespace StackAndQueue
 
         public T Dequeue()
         {
-            if (Head == Tail)
-            {
-                Tail = null;
-            }
+            if (Head == Tail) { Tail = null; }
             Node<T> temp = Head.Next;
             Head.Next = null;
             T value = Head.Data;
