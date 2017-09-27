@@ -16,6 +16,7 @@ namespace StackAndQueue
             while (runner.Next != null)
             {
                 output += runner.Data + " -> ";
+                runner = runner.Next;
             }
             output += runner.Data + " -> null";
             Console.WriteLine(output);
