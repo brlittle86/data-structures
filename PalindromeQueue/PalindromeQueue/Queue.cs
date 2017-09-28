@@ -14,8 +14,10 @@ namespace PalindromeQueue
 
         public void Enqueue(string data)
         {
+            Node temp = Tail;
             Tail.Next = new Node(data);
             Tail = Tail.Next;
+            Tail.Previous = temp;
         }
 
         public string Dequeue()
@@ -35,7 +37,7 @@ namespace PalindromeQueue
 
             while (start.Next != null && end.Previous != null)
             {
-                if (start.Data == end.Data)
+                if (start.Data.Equals(end.Data) == true)
                 {
                     start = start.Next;
                     end = end.Previous;
