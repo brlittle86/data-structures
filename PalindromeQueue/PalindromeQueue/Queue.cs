@@ -27,5 +27,25 @@ namespace PalindromeQueue
             Head = temp;
             return value;
         }
+
+        public string IsPalindrome()
+        {
+            Node start = Head;
+            Node end = Tail;
+
+            while (start.Next != null && end.Previous != null)
+            {
+                if (start.Data == end.Data)
+                {
+                    start = start.Next;
+                    end = end.Previous;
+                }
+                else
+                {
+                    return "Not a palindrome!";
+                }
+            }
+            return "Is a palindrome!";
+        }
     }
 }
