@@ -11,7 +11,7 @@ namespace PalindromeQueue
 
         public void View()
         {
-            Node<T> runner = Head;
+            Node runner = Head;
             string output = "";
             while (runner.Next != null)
             {
