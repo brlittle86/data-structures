@@ -12,10 +12,10 @@ namespace PalindromeQueue
         public void View()
         {
             Node runner = Head;
-            string output = "";
+            string output = "null <- ";
             while (runner.Next != null)
             {
-                output += runner.Data + " -> ";
+                output += runner.Data + " <-> ";
                 runner = runner.Next;
             }
             output += runner.Data + " -> null";
