@@ -10,3 +10,6 @@
 
 - For the Palindrome challenge, we created two pointers on the Head and Tail nodes and compared their data to each other as they traversed the Queue in opposite directions.
 ![Palindrome!](https://imgur.com/a/IX8Fl)
+
+- For making a Queue out of two Stacks, we basically rename the Stack.Push to Enqueue, and then for the Dequeue, we Pop everything in Stack1 into Stack2, then Pop Stack2 and save the node into a variable, then we move everything back to Stack1 and return the Dequeued Node
+![TwoStacksOneQueue](https://imgur.com/a/OMwsY)
