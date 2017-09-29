@@ -12,6 +12,12 @@ namespace TwoStacksOneQueue
             Tail = Head;
         }
 
+        public Stack()
+        {
+            Head = null;
+            Tail = null;
+        }
+
         public void Push(int data)
         {
             Node temp = Head;
