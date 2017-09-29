@@ -14,5 +14,24 @@ namespace TwoStacksOneQueue
             Stack1 = new Stack(data);
             Stack2 = new Stack();
         }
+
+        public void Enqueue(int data)
+        {
+            Stack1.Push(data);
+        }
+
+        public Node Dequeue()
+        {
+            while (Stack1.Head != null)
+            {
+                Stack2.Push(Stack1.Pop().Data);
+            }
+            Node temp = Stack2.Pop();
+            while (Stack2.Head != null)
+            {
+                Stack1.Push(Stack2.Pop().Data);
+            }
+            return temp;
+        }
     }
 }
