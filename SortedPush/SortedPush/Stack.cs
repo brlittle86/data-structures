@@ -45,6 +45,7 @@ namespace SortedPush
                 tempList.Add(Pop().Data);
             }
             tempList.Sort();
+            tempList.Reverse();
             foreach (int d in tempList)
             {
                 Push(d);
