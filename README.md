@@ -13,3 +13,6 @@
 
 - For making a Queue out of two Stacks, we basically rename the Stack.Push to Enqueue, and then for the Dequeue, we Pop everything in Stack1 into Stack2, then Pop Stack2 and save the node into a variable, then we move everything back to Stack1 and return the Dequeued Node
 ![TwoStacksOneQueue](https://imgur.com/a/OMwsY)
+
+- In order to do a Sorted Push on a Stack, we first place the new data in a List, then we Pop everything from the stack into the list. After that, we sort and reverse the list. Then we push each item in the list back into the stack.
+![SortedPush](https://lh4.googleusercontent.com/ZpY-tHiOlakkfsZ3Zh_0qYgXhGCMqtX-1gZfGag2xG_u-80tzz8PuDAQ6neWDPBm4VD5OPztBDQzFaF-CFOWQkyiXYDrV-yG1qQj=w1920-h930)
