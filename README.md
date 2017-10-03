@@ -19,3 +19,6 @@
 
 - For Trees, we just did some basic Nodes with Value, Left, and Right. The Tree has a pair of methods with some rudimentary logic to add to the left or right node.
 ![BasicTree](https://lh3.googleusercontent.com/73SqXCYvYDqNyfBu4IYDoXcTTnIF_erXZSHfIDS_7_5nEMc0lqClF7hFDanfsFDY1FZkwgeFHFf1AMDv3L5xWlOMGqPQd3OD2rO8=w1920-h930)
+
+- For Traversal, we devised a recursive method to move through all available nodes and Console.WriteLine the Data of each node.
+![TreeTraversal](https://lh5.googleusercontent.com/bZbc8lVs_GQUKxobYsJ1onWSoUVfjbVGCk7HT0aLfnarLAmVOoEjs-vWe4MGhrXuIRXO6nxO6QIQp4ncDgIa9lxvB4VJjuw51-GS=w1920-h930)
