@@ -19,6 +19,7 @@ namespace TreeRecursiveTraversal
 
         public void Traversal()
         {
+            Console.WriteLine(Data);
             if (Left != null)
             {
                 Left.Traversal();
@@ -27,7 +28,6 @@ namespace TreeRecursiveTraversal
             {
                 Right.Traversal();
             }
-            Console.WriteLine(Data);
         }
     }
 }
