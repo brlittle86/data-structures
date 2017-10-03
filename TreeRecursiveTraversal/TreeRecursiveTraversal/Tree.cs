@@ -16,5 +16,18 @@ namespace TreeRecursiveTraversal
             Left = null;
             Right = null;
         }
+
+        public void Traversal()
+        {
+            if (Left != null)
+            {
+                Left.Traversal();
+            }
+            if (Right != null)
+            {
+                Right.Traversal();
+            }
+            Console.WriteLine(Data);
+        }
     }
 }
