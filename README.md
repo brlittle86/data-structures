@@ -15,4 +15,7 @@
 ![TwoStacksOneQueue](https://imgur.com/a/OMwsY)
 
 - In order to do a Sorted Push on a Stack, we first place the new data in a List, then we Pop everything from the stack into the list. After that, we sort and reverse the list. Then we push each item in the list back into the stack.
-![SortedPush](https://lh4.googleusercontent.com/ZpY-tHiOlakkfsZ3Zh_0qYgXhGCMqtX-1gZfGag2xG_u-80tzz8PuDAQ6neWDPBm4VD5OPztBDQzFaF-CFOWQkyiXYDrV-yG1qQj=w1920-h930)
+![SortedPush](https://lh4.googleusercontent.com/ZpY-tHiOlakkfsZ3Zh_0qYgXhGCMqtX-1gZfGag2xG_u-80tzz8PuDAQ6neWDPBm4VD5OPztBDQzFaF-CFOWQkyiXYDrV-yG1qQj=w1920-h930
+
+- For Trees, we just did some basic Nodes with Value, Left, and Right. The Tree has a pair of methods with some rudimentary logic to add to the left or right node.
+![BasicTree](https://lh3.googleusercontent.com/73SqXCYvYDqNyfBu4IYDoXcTTnIF_erXZSHfIDS_7_5nEMc0lqClF7hFDanfsFDY1FZkwgeFHFf1AMDv3L5xWlOMGqPQd3OD2rO8=w1920-h930)
