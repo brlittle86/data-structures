@@ -16,5 +16,26 @@ namespace InOrderPostOrder
             Left = null;
             Right = null;
         }
+
+        public void PreOrderTraversal()
+        {
+            Console.WriteLine(Data);
+            if(Left != null) { Left.PreOrderTraversal(); }
+            if(Right != null) { Right.PreOrderTraversal(); }
+        }
+
+        public void InOrderTraversal()
+        {
+            if (Left != null) { Left.PreOrderTraversal(); }
+            Console.WriteLine(Data);
+            if (Right != null) { Right.PreOrderTraversal(); }
+        }
+
+        public void PostOrderTraversal()
+        {
+            if (Left != null) { Left.PreOrderTraversal(); }
+            if (Right != null) { Right.PreOrderTraversal(); }
+            Console.WriteLine(Data);
+        }
     }
 }
