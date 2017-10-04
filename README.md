@@ -22,3 +22,6 @@
 
 - For Traversal, we devised a recursive method to move through all available nodes and Console.WriteLine the Data of each node.
 ![TreeTraversal](https://lh5.googleusercontent.com/bZbc8lVs_GQUKxobYsJ1onWSoUVfjbVGCk7HT0aLfnarLAmVOoEjs-vWe4MGhrXuIRXO6nxO6QIQp4ncDgIa9lxvB4VJjuw51-GS=w1920-h930)
+
+- For In and Post Order Traversal, all that is required is changes to when the Tree node Data is written, relative to the recursive calls
+![OtherTreeTraversals](https://lh4.googleusercontent.com/NfFqdnUZIMy-DfFgfu4BphaVWo5FhMaOttwG7ggn5s-nV9uyigUP0vLSaeIpF2hfW8I-Jg5VE90VzJ7WUt_XilEu0KXDzOLtcrx2=w1920-h930)
