@@ -19,6 +19,10 @@ namespace BreadthFirstTraversal
                     Right = new Tree(7)
                 }
             };
+
+            Console.WriteLine("Here is a Breadth-First Traversal of our Tree:");
+            myTree.BreadthTraversal();
+            Console.Read();
         }
     }
 }
