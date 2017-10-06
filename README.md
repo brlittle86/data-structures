@@ -25,3 +25,6 @@
 
 - For In and Post Order Traversal, all that is required is changes to when the Tree node Data is written, relative to the recursive calls
 ![OtherTreeTraversals](https://lh4.googleusercontent.com/NfFqdnUZIMy-DfFgfu4BphaVWo5FhMaOttwG7ggn5s-nV9uyigUP0vLSaeIpF2hfW8I-Jg5VE90VzJ7WUt_XilEu0KXDzOLtcrx2=w1920-h930)
+
+- For Breadth First Traversal, we use a Queue - a method that has an O-notation of O(n). The root gets enqueued, then, while the queue is not empty, it dequeues on the queue and stores that node in a temporary variable. It then writes the Data in the node and checks for and enqueues the Left and Right of the node. This repeats as long as the queue has nodes.
+![BreadthFirst](https://lh4.googleusercontent.com/40y48WmIlM78Uc9az65Dj4Besl34GjrZsMLDf7eRoqJ1GtVMV5gMOr_lkijOx-9T0jCZHWFVtwc9kTjjIExdbLBJI6vF2WnNR3u2=w1920-h930)
