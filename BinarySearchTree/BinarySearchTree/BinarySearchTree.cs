@@ -17,6 +17,40 @@ namespace BinarySearchTree
             Right = null;
         }
 
+        public void BstAdd(int data)
+        {
+            if (data < Data)
+            {
+                if (Left == null)
+                {
+                    Left = new BinarySearchTree(data);
+                    return;
+                }
+                else
+                {
+                    Left.BstAdd(data);
+                    return;
+                }
+            }
+            else if (data > Data)
+            {
+                if (Right == null)
+                {
+                    Right = new BinarySearchTree(data);
+                    return;
+                }
+                else
+                {
+                    Right.BstAdd(data);
+                    return;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Identical data found, no new leaf added.");
+            }
+        }
+
         public void PreOrderTraversal()
         {
             Console.WriteLine(Data);
