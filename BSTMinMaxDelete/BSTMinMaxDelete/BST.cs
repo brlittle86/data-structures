@@ -91,5 +91,17 @@ namespace BSTMinMaxDelete
                 }
             }
         }
+
+        public int FindMin()
+        {
+            if (Left != null)
+            {
+                return Left.FindMin();
+            }
+            else
+            {
+                return Data;
+            }
+        }
     }
 }
