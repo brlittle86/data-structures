@@ -103,5 +103,17 @@ namespace BSTMinMaxDelete
                 return Data;
             }
         }
+
+        public int FindMax()
+        {
+            if (Right != null)
+            {
+                return Right.FindMax();
+            }
+            else
+            {
+                return Data;
+            }
+        }
     }
 }
