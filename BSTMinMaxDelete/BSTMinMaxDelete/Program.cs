@@ -34,6 +34,7 @@ namespace BSTMinMaxDelete
             // Not currently working 
             myTree.InOrderTraversal();
             myTree.Delete(myTree, 9);
+            Console.WriteLine("The value 9 should be replaced by 12, 12 should be gone.");
             myTree.InOrderTraversal();
 
             Console.Read();

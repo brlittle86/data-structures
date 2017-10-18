@@ -116,6 +116,32 @@ namespace BSTMinMaxDelete
             }
         }
 
+        public void DestroyLeft(BST L, int data)
+        {
+            if (L.Left.Data == data)
+            {
+                L.Left = null;
+                return;
+            }
+            else
+            {
+                DestroyLeft(L.Left, data);
+            }
+        }
+
+        public void DestroyRight(BST R, int data)
+        {
+            if (R.Right.Data == data)
+            {
+                R.Right = null;
+                return;
+            }
+            else
+            {
+                DestroyRight(R.Right, data);
+            }
+        }
+
         public void Delete(BST root, int data)
         {
             if (Data == data)
