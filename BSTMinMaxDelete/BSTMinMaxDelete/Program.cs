@@ -21,6 +21,13 @@ namespace BSTMinMaxDelete
              *      / \   / \
              *     7  12 17 28
              */
+
+            // This should return 7
+            Console.WriteLine($"The minimum value is {myTree.FindMin()}.");
+            // This should return 28
+            Console.WriteLine($"The maximum value is {myTree.FindMax()}.");
+
+            Console.Read();
         }
     }
 }
