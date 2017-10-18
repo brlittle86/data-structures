@@ -27,6 +27,15 @@ namespace BSTMinMaxDelete
             // This should return 28
             Console.WriteLine($"The maximum value is {myTree.FindMax()}.");
 
+            // Testing a delete with a value not in the tree
+            myTree.Delete(myTree, 13);
+
+            // In-Order Traversal, followed by a Delete, then another In-Order Traversal to show working deletion
+            // Not currently working 
+            myTree.InOrderTraversal();
+            myTree.Delete(myTree, 9);
+            myTree.InOrderTraversal();
+
             Console.Read();
         }
     }

@@ -115,5 +115,54 @@ namespace BSTMinMaxDelete
                 return Data;
             }
         }
+
+        public void Delete(BST root, int data)
+        {
+            if (Data == data)
+            {
+                if (Left == null && Right == null)
+                {
+                    root = null;
+                }
+                else if (Left != null && Right == null)
+                {
+                    Data = Left.FindMax();
+                    Left.Delete(Left, Data);
+                }
+                else
+                {
+                    Data = Right.FindMin();
+                    Right.Delete(Right, Data);
+                }
+            }
+            else if (Data > data)
+            {
+                if (Left != null)
+                {
+                    Left.Delete(Left, data);
+                    return; 
+                }
+                else
+                {
+                    Console.WriteLine("Unable to find that data in this tree. Nothing was deleted.");
+                }
+            }
+            else if (Data < data)
+            {
+                if (Right != null)
+                {
+                    Right.Delete(Right, data);
+                    return; 
+                }
+                else
+                {
+                    Console.WriteLine("Unable to find that data in this tree. Nothing was deleted.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Unable to find that data in this tree. Nothing was deleted.");
+            }
+        }
     }
 }
