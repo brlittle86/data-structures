@@ -33,8 +33,8 @@ namespace BSTMinMaxDelete
             // In-Order Traversal, followed by a Delete, then another In-Order Traversal to show working deletion
             // Not currently working 
             myTree.InOrderTraversal();
-            myTree.Delete(myTree, 9);
-            Console.WriteLine("The value 9 should be replaced by 12, 12 should be gone.");
+            myTree.Delete(myTree, 14);
+            Console.WriteLine("The value 14 should be replaced by 12, 12 should be gone.");
             myTree.InOrderTraversal();
 
             Console.Read();

@@ -153,12 +153,12 @@ namespace BSTMinMaxDelete
                 else if (Left != null && Right == null)
                 {
                     Data = Left.FindMax();
-                    Left.Delete(Left, Data);
+                    DestroyRight(this.Left, Data);
                 }
                 else
                 {
                     Data = Right.FindMin();
-                    Right.Delete(Right, Data);
+                    DestroyLeft(this.Right, Data);
                 }
             }
             else if (Data > data)
