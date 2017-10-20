@@ -12,5 +12,31 @@ namespace BSTAnimalGame
         {
             Root = new Node<T>(data);
         }
+
+        public void AskQuestion(Node<T> curr)
+        {
+            if (curr.Left == null && curr.Right == null)
+            {
+                MakeGuess(curr);
+            }
+            else
+            {
+                Console.WriteLine($"{curr.Data}");
+                string answer = Console.ReadLine().ToLower();
+                if (answer == "y" || answer == "yes")
+                {
+                    AskQuestion(curr.Left);
+                }
+                else
+                {
+                    AskQuestion(curr.Right);
+                }
+            }
+        }
+
+        public void MakeGuess(Node<T> node)
+        {
+
+        }
     }
 }
