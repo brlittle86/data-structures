@@ -4,7 +4,13 @@ using System.Text;
 
 namespace BSTAnimalGame
 {
-    class Tree
+    class Tree<T>
     {
+        public Node<T> Root { get; set; }
+
+        public Tree(T data)
+        {
+            Root = new Node<T>(data);
+        }
     }
 }
