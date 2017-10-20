@@ -41,6 +41,7 @@ namespace BSTAnimalGame
             if (answer == "y" || answer == "yes")
             {
                 Console.WriteLine("Hooray!");
+                PlayAgain();
             }
             else
             {
@@ -51,6 +52,8 @@ namespace BSTAnimalGame
                 node.Left = new Node(node.Data);
                 node.Right = new Node(newAnimal);
                 node.Data = newQuestion;
+
+                PlayAgain();
             }
         }
 
