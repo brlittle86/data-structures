@@ -16,6 +16,25 @@ namespace ArrayToBST
             Left = null;
             Right = null;
         }
+
+        public void InOrderTraversal()
+        {
+            if (Left != null) { Left.InOrderTraversal(); }
+            Console.WriteLine(Data);
+            if (Right != null) { Right.InOrderTraversal(); }
+        }
+
+    }
+
+    class BinarySearchTree
+    {
+        public Node Root { get; set; }
+
+        public BinarySearchTree(int[] array)
+        {
+            Root = ToBST(array, 0, array.Length - 1);
+        }
+
         public Node ToBST(int[] array, int start, int end)
         {
             if (start > end)
@@ -23,20 +42,15 @@ namespace ArrayToBST
                 return null;
             }
 
-            int mid = (int)((start + end) / 2);
+            int mid = (int)Math.Floor((start + end) / 2.0);
 
             Node newTree = new Node(array[mid])
             {
                 Left = ToBST(array, start, mid - 1),
-                Right = ToBST(array, start + 1, mid)
+                Right = ToBST(array, mid + 1, end)
             };
 
             return newTree;
         }
-    }
-    class BinarySearchTree
-    {
-        public Node Root { get; set; }
-
     }
 }
