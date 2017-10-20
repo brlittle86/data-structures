@@ -53,5 +53,21 @@ namespace BSTAnimalGame
                 node.Data = newQuestion;
             }
         }
+
+        public void PlayAgain()
+        {
+            Console.WriteLine("Would you like to play again?");
+            string answer = Console.ReadLine().ToLower();
+            if (answer == "y" || answer == "yes")
+            {
+                AskQuestion(Root);
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Thanks for playing!");
+                return;
+            }
+        }
     }
 }
