@@ -4,13 +4,13 @@ using System.Text;
 
 namespace BSTAnimalGame
 {
-    class Node<T>
+    class Node
     {
-        public T Data { get; set; }
-        public Node<T> Left { get; set; }
-        public Node<T> Right { get; set; }
+        public string Data { get; set; }
+        public Node Left { get; set; }
+        public Node Right { get; set; }
 
-        public Node(T data)
+        public Node(string data)
         {
             Data = data;
             Left = null;
