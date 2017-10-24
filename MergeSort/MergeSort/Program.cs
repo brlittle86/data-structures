@@ -9,7 +9,7 @@ namespace MergeSort
             Console.WriteLine("Hello World!");
         }
 
-        static void Merge(int[] array, int low, int mid, int high)
+        private static void Merge(int[] array, int low, int mid, int high)
         {
             int left = low;
             int right = mid + 1;
@@ -48,6 +48,17 @@ namespace MergeSort
             for (int i = 0; i < temp.Length; i++)
             {
                 array[low + i] = temp[i];
+            }
+        }
+
+        public static void MergeSort(int[] array, int low, int high)
+        {
+            if (low < high)
+            {
+                int mid = (low / 2) + (high / 2);
+                MergeSort(array, low, mid);
+                MergeSort(array, mid + 1, high);
+                Merge(array, low, mid, high);
             }
         }
     }
