@@ -6,7 +6,7 @@ namespace MergeSort
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
 
         private static void Merge(int[] array, int low, int mid, int high)
@@ -65,6 +65,16 @@ namespace MergeSort
         public static void MergeSort(int[] array)
         {
             MergeSort(array, 0, array.Length - 1);
+        }
+
+        static string PrintIntArray(int[] array)
+        {
+            string phrase = "";
+            foreach (var item in array)
+            {
+                phrase += " " + item;
+            }
+            return phrase;
         }
     }
 }
