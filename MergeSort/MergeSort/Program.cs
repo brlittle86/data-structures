@@ -13,6 +13,7 @@ namespace MergeSort
             Console.Read();
         }
 
+        // Merge elements of an array by value, by comparing each element to a corresponding element
         private static void Merge(int[] array, int low, int mid, int high)
         {
             int left = low;
@@ -55,6 +56,7 @@ namespace MergeSort
             }
         }
 
+        // Recursively divide the array into subsections, then compare and merge each subsection as it recombines the array
         public static void MergeSort(int[] array, int low, int high)
         {
             if (low < high)
@@ -66,11 +68,13 @@ namespace MergeSort
             }
         }
 
+        // Method to allow us to pass in an array without any additional arguments
         public static void MergeSort(int[] array)
         {
             MergeSort(array, 0, array.Length - 1);
         }
 
+        // Helper method to print the contents of an array to a string
         static string PrintIntArray(int[] array)
         {
             string phrase = "";
