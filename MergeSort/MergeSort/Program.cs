@@ -61,5 +61,10 @@ namespace MergeSort
                 Merge(array, low, mid, high);
             }
         }
+
+        public static void MergeSort(int[] array)
+        {
+            MergeSort(array, 0, array.Length - 1);
+        }
     }
 }
