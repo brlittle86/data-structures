@@ -6,7 +6,11 @@ namespace MergeSort
     {
         static void Main(string[] args)
         {
-            
+            int[] unsortedArray = new int[] { 8, 3, 9, 14, 4, 7, 10, 1, 5, 18, 2 };
+            Console.WriteLine($"Our unsorted array is: {PrintIntArray(unsortedArray)}.");
+            MergeSort(unsortedArray);
+            Console.WriteLine($"Our sorted array is: {PrintIntArray(unsortedArray)}.");
+            Console.Read();
         }
 
         private static void Merge(int[] array, int low, int mid, int high)
