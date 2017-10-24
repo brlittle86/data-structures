@@ -6,10 +6,13 @@ namespace InsertionSort
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int[] unsortedArray = new int[] { 14, 18, 4, 3, 9, 18, 47, 32, 10 };
+            Console.WriteLine($"Our unsorted array: {PrintIntArray(unsortedArray)}.");
+            Console.WriteLine($"Now we sort it and it becomes: {PrintIntArray(InsertionSort(unsortedArray))}.");
+            Console.Read();
         }
 
-        public int[] InsertionSort(int[] sortArray)
+        static int[] InsertionSort(int[] sortArray)
         {
             for (int i = 1; i < sortArray.Length; i++)
             {
@@ -30,6 +33,16 @@ namespace InsertionSort
                 }
             }
             return sortArray;
+        }
+
+        static string PrintIntArray(int[] array)
+        {
+            string phrase = "";
+            foreach (var item in array)
+            {
+                phrase += " " + item;
+            }
+            return phrase;
         }
     }
 }
