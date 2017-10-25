@@ -26,5 +26,30 @@ namespace BitonicSortAlgorithm
                 Swap(array, i, j);
             }
         }
+
+        static void BitonicMerge(int[] array, int low, int high, bool dir)
+        {
+            if (high > 1)
+            {
+                int mid = high / 2;
+                for (int i = low; i < low + mid; ++i)
+                {
+                    Compare(array, i, i + mid, dir);
+                }
+                BitonicMerge(array, low, mid, dir);
+                BitonicMerge(array, low + mid, mid, dir);
+            }
+        }
+
+        static void BitonicSort(int[] array, int low, int high, bool dir)
+        {
+            if (high > 1)
+            {
+                int mid = high / 2;
+                BitonicSort(array, low, mid, ascending);
+                BitonicSort(array, low + mid, mid, descending);
+                BitonicMerge(array, low, high, dir);
+            }
+        }
     }
 }
