@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace BitonicSortAlgorithm
 {
@@ -55,6 +56,27 @@ namespace BitonicSortAlgorithm
         static void BitonicSort(int[] array)
         {
             BitonicSort(array, 0, array.Length, ascending);
+        }
+
+        static void ParallelBitonicMerge(int[] array, int low, int high, bool dir)
+        {
+            if (high > 500)
+            {
+                int mid = high / 2;
+                for (int i = low; i < low + mid; ++i)
+                {
+                    Compare(array, i, i + mid, dir);
+                }
+
+                Parallel.Invoke(
+                    () => ParallelBitonicMerge(array, low, mid, dir),
+                    () => ParallelBitonicMerge(array, low + mid, mid, dir)
+                );
+            }
+            else if (high > 1)
+            {
+                BitonicMerge(array, low, high, dir);
+            }
         }
     }
 }
