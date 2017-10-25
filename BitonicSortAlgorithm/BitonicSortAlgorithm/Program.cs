@@ -78,5 +78,24 @@ namespace BitonicSortAlgorithm
                 BitonicMerge(array, low, high, dir);
             }
         }
+
+        static void ParallelBitonicSort(int[] array, int low, int high, bool dir)
+        {
+            if (high > 1)
+            {
+                int mid = high / 2;
+                Parallel.Invoke(
+                    () => ParallelBitonicSort(array, low, mid, ascending),
+                    () => ParallelBitonicSort(array, low + mid, mid, descending)
+                );
+
+                ParallelBitonicMerge(array, low, high, dir);
+            }
+        }
+
+        static void ParallelBitonicSort(int[] array)
+        {
+            ParallelBitonicSort(array, 0, array.Length, ascending);
+        }
     }
 }
