@@ -41,3 +41,5 @@
 - For doing the animal game, we simply check to see if we're on a Leaf node - if we are, then we make the guess for the animal and handle the user's responses from there. If we are not on a Leaf, it moves through the tree by taking yes or no answers from the user.
 
 - For Insertion Sort, we take in an array, then iterate through each value in the array, checking if the previous value is greater than the current value. If it is, we swap the two values and then check if the next previous value is also greater - until it is not, or the value is placed at index 0 of the array. We used http://www.c-sharpcorner.com/blogs/insertion-sorting-algorithm-in-c-sharp1 as a resource for this challenge.
+
+- For Merge Sort, we take in an array, determine a low/high index, then recursively divide the array into subsections until each value in the array is its own subsection. The recursive calls then pull off the stack as neighboring subsections go through a comparative merge sequence. My partner and I used this implementation as a model for our implementation: https://gist.github.com/pmgeorg/9122984
