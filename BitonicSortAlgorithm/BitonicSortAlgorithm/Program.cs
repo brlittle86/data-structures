@@ -10,7 +10,18 @@ namespace BitonicSortAlgorithm
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            const int size = 200000;
+            Random random = new Random();
+            int[] randomValues = new int[size];
+            for (int i = 0; i < size; ++i)
+            {
+                randomValues[i] = random.Next(1, 5000);
+            }
+            Console.WriteLine("Press any key to begin our Bitonic Sort...");
+            Console.ReadKey();
+            ParallelBitonicSort(randomValues);
+            Console.WriteLine("Sorting complete!");
+            Console.Read();
         }
 
         static void Swap(int[] array, int a, int b)
