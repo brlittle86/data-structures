@@ -52,9 +52,9 @@ namespace BitonicSortAlgorithm
             }
         }
 
-        static void BitonicSort(int[] array, int size)
+        static void BitonicSort(int[] array)
         {
-            BitonicSort(array, 0, size, ascending);
+            BitonicSort(array, 0, array.Length, ascending);
         }
     }
 }
