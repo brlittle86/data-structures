@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace MergeSort
 {
@@ -62,8 +63,9 @@ namespace MergeSort
             if (low < high)
             {
                 int mid = (low / 2) + (high / 2);
-                MergeSort(array, low, mid);
-                MergeSort(array, mid + 1, high);
+                //MergeSort(array, low, mid);
+                //MergeSort(array, mid + 1, high);
+                Parallel.Invoke(() => MergeSort(array, low, mid), () => MergeSort(array, mid + 1, high));
                 Merge(array, low, mid, high);
             }
         }
