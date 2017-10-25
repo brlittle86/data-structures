@@ -51,5 +51,10 @@ namespace BitonicSortAlgorithm
                 BitonicMerge(array, low, high, dir);
             }
         }
+
+        static void BitonicSort(int[] array, int size)
+        {
+            BitonicSort(array, 0, size, ascending);
+        }
     }
 }
