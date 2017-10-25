@@ -6,7 +6,16 @@ namespace RadixSortAlgorithm
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            const int valueCount = 20;
+            int[] randomArray = new int[valueCount];
+            Random rnd = new Random();
+            for (int i = 0; i < valueCount; i++)
+            {
+                randomArray[i] = rnd.Next(1, 1000);
+            }
+            Console.WriteLine($"Initial array: {String.Join(" ", randomArray)}");
+            RadixSort(randomArray);
+            Console.Read();
         }
 
         public static void RadixSort(int[] array)
@@ -24,7 +33,7 @@ namespace RadixSortAlgorithm
             while (max / p > 0)
             {
                 array = CountSort(array, array.Length, p);
-                Console.WriteLine(String.Join(" ", array));
+                Console.WriteLine($"After pass {pass} : {String.Join(" ", array)}");
                 pass++;
                 p *= 10;
             }
@@ -36,6 +45,11 @@ namespace RadixSortAlgorithm
             int[] count = new int[10];
 
             for (int i = 0; i < max; i++)
+            {
+                count[(array[i] / p) % 10]++;
+            }
+
+            for (int i = 1; i < 10; i++)
             {
                 count[i] += count[i - 1];
             }
