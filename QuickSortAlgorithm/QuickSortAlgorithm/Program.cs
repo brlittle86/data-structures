@@ -6,7 +6,17 @@ namespace QuickSortAlgorithm
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            const int max = 20;
+            Random rnd = new Random();
+            int[] unsortedArray = new int[max];
+            for (int i = 0; i < unsortedArray.Length; i++)
+            {
+                unsortedArray[i] = rnd.Next(1, 100);
+            }
+            Console.WriteLine($"Initial array: {String.Join(" ", unsortedArray)}");
+            QuickSort(unsortedArray);
+            Console.WriteLine($"Sorted array: {String.Join(" ", unsortedArray)}");
+            Console.Read();
         }
 
         static void QuickSort(int[] array, int low, int high)
