@@ -9,6 +9,25 @@ namespace QuickSortAlgorithm
             Console.WriteLine("Hello World!");
         }
 
+        static void QuickSort(int[] array, int low, int high)
+        {
+            if (array.Length <= 1 || low < 0 || high < 0 || (high - low) < 1)
+            {
+                return;
+            }
+            if (low < high)
+            {
+                int pivot = Partition(array, low, high);
+                QuickSort(array, low, pivot - 1);
+                QuickSort(array, pivot + 1, high);
+            }
+        }
+
+        static void QuickSort(int[] array)
+        {
+            QuickSort(array, 0, array.Length - 1);
+        }
+
         static int Partition(int[] array, int low, int high)
         {
             int pivot = array[high];
