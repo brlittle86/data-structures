@@ -6,37 +6,56 @@ namespace AssociativeArrayStructure
 {
     class AssociativeArray
     {
-        public Object[] Kvp { get; set; }
+        public class Kvp
+        {
+            public string Key { get; set; }
+            public string Value { get; set; }
+            public Kvp(string key, string value)
+            {
+                Key = key;
+                Value = value;
+            }
+        }
+        public Kvp[] AArray { get; set; }
         public int CapacityFilled { get; set; }
 
         public AssociativeArray(int startSize)
         {
-            Kvp = new Object[startSize];
+            AArray = new Kvp[startSize];
             CapacityFilled = 0;
+        }
+
+        public void Reallocate()
+        {
+            AssociativeArray temp = new AssociativeArray(AArray.Length * 2);
+            for (int i = 0; i < AArray.Length; i++)
+            {
+                
+            }
         }
 
         public void Add(string key, string value)
         {
-            var keyHashIndex = key.GetHashCode() % Kvp.Length;
-            if (Kvp[keyHashIndex] == null)
+            var keyHashIndex = key.GetHashCode() % AArray.Length;
+            if (AArray[keyHashIndex] == null)
             {
-                Kvp[keyHashIndex] = new { key = value };
+                AArray[keyHashIndex] = new Kvp(key, value);
                 CapacityFilled++;
             }
             else
             {
-                while (Kvp[keyHashIndex] != null || keyHashIndex != Kvp.Length)
+                while (AArray[keyHashIndex] != null || keyHashIndex != AArray.Length)
                 {
                     keyHashIndex++;
                 }
-                if (keyHashIndex >= Kvp.Length)
+                if (keyHashIndex >= AArray.Length)
                 {
                     Reallocate();
                     Add(key, value);
                 }
-                else if (Kvp[keyHashIndex] == null)
+                else if (AArray[keyHashIndex] == null)
                 {
-                    Kvp[keyHashIndex] = new { key = value };
+                    AArray[keyHashIndex] = new Kvp(key, value);
                     CapacityFilled++;
                 }
             }
