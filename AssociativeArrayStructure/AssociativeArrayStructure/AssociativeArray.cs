@@ -28,15 +28,19 @@ namespace AssociativeArrayStructure
         public void Reallocate()
         {
             AssociativeArray temp = new AssociativeArray(AArray.Length * 2);
-            for (int i = 0; i < AArray.Length; i++)
+            foreach (var item in AArray)
             {
-                
+                if (item != null)
+                {
+                    temp.Add(item.Key, item.Value); 
+                }
             }
+            AArray = temp.AArray;
         }
 
         public void Add(string key, string value)
         {
-            var keyHashIndex = key.GetHashCode() % AArray.Length;
+            var keyHashIndex = Math.Abs(key.GetHashCode() % AArray.Length);
             if (AArray[keyHashIndex] == null)
             {
                 AArray[keyHashIndex] = new Kvp(key, value);
@@ -59,6 +63,24 @@ namespace AssociativeArrayStructure
                     CapacityFilled++;
                 }
             }
+            if (CapacityFilled >= AArray.Length / 2)
+            {
+                Reallocate();
+            }
+        }
+
+        public Kvp Remove(string key)
+        {
+            var location = Math.Abs(key.GetHashCode() % AArray.Length);
+            while (AArray[location].Key != key && location < AArray.Length)
+            {
+                location++;
+            }
+            if (AArray[location].Key != key)
+            {
+                return new Kvp("Not", "Found");
+            }
+            
         }
     }
 }
