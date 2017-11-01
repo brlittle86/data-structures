@@ -9,5 +9,10 @@ namespace AssociativeArrayStructure
         public Object[] Kvp { get; set; }
         public int CapacityFilled { get; set; }
 
+        public AssociativeArray()
+        {
+            Kvp = new Object[20];
+            CapacityFilled = 0;
+        }
     }
 }
