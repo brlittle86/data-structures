@@ -9,10 +9,37 @@ namespace AssociativeArrayStructure
         public Object[] Kvp { get; set; }
         public int CapacityFilled { get; set; }
 
-        public AssociativeArray()
+        public AssociativeArray(int startSize)
         {
-            Kvp = new Object[20];
+            Kvp = new Object[startSize];
             CapacityFilled = 0;
+        }
+
+        public void Add(string key, string value)
+        {
+            var keyHashIndex = key.GetHashCode() % Kvp.Length;
+            if (Kvp[keyHashIndex] == null)
+            {
+                Kvp[keyHashIndex] = new { key = value };
+                CapacityFilled++;
+            }
+            else
+            {
+                while (Kvp[keyHashIndex] != null || keyHashIndex != Kvp.Length)
+                {
+                    keyHashIndex++;
+                }
+                if (keyHashIndex >= Kvp.Length)
+                {
+                    Reallocate();
+                    Add(key, value);
+                }
+                else if (Kvp[keyHashIndex] == null)
+                {
+                    Kvp[keyHashIndex] = new { key = value };
+                    CapacityFilled++;
+                }
+            }
         }
     }
 }
