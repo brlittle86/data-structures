@@ -49,5 +49,19 @@ namespace MatrixArrayZero
                 }
             }
         }
+
+        // Print our matrix in an easily viewed format
+        public void PrintMatrix()
+        {
+            for (int i = 0; i < Depth; i++)
+            {
+                string currentLine = "";
+                for (int j = 0; j < Width; j++)
+                {
+                    currentLine += $"{MtxArr[j, i]} ";
+                }
+                Console.WriteLine(currentLine);
+            }
+        }
     }
 }
