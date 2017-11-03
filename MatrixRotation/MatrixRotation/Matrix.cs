@@ -37,6 +37,25 @@ namespace MatrixRotation
             }
         }
 
+        public void RotateCounter()
+        {
+            Stack<int> tempStack = new Stack<int>();
+            for (int i = 0; i < Depth; i++)
+            {
+                for (int j = 0; j < Width; j++)
+                {
+                    tempStack.Push(MtxArr[j, i]);
+                }
+            }
+            for (int k = Width - 1; k < 0; k--)
+            {
+                for (int l = 0; l < Depth; l++)
+                {
+                    MtxArr[k, l] = tempStack.Pop();
+                }
+            }
+        }
+
         public void AddToMatrix(int x, int y, int value)
         {
             // If value is 0, set all values in row x and column y to 0, else set value at specified location
