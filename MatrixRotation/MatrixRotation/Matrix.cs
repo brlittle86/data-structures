@@ -47,7 +47,7 @@ namespace MatrixRotation
                     tempStack.Push(MtxArr[j, i]);
                 }
             }
-            for (int k = Width - 1; k < 0; k--)
+            for (int k = Width - 1; k >= 0; k--)
             {
                 for (int l = 0; l < Depth; l++)
                 {
