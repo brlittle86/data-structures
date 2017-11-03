@@ -6,7 +6,13 @@ namespace MatrixRotation
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Matrix myMatrix = new Matrix(3, 3);
+            myMatrix.PopulateRandom();
+            myMatrix.PrintMatrix();
+            Console.WriteLine("Let's rotate Clockwise!");
+            myMatrix.RotateClockwise();
+            myMatrix.PrintMatrix();
+            Console.Read();
         }
     }
 }

@@ -18,7 +18,7 @@ namespace MatrixRotation
         }
 
         // Rotate Matrix 90 degrees Counter-Clockwise
-        public void RotateCounter()
+        public void RotateClockwise()
         {
             Queue<int> tempQueue = new Queue<int>();
             for (int i = 0; i < Depth; i++)
@@ -28,11 +28,11 @@ namespace MatrixRotation
                     tempQueue.Enqueue(MtxArr[j, i]);
                 }
             }
-            for (int k = Width; k > 0; k--)
+            for (int k = Width - 1; k >= 0; k--)
             {
                 for (int l = 0; l < Depth; l++)
                 {
-                    MtxArr[l, k] = tempQueue.Dequeue();
+                    MtxArr[k, l] = tempQueue.Dequeue();
                 }
             }
         }
