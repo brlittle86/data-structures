@@ -17,6 +17,26 @@ namespace MatrixRotation
             Depth = depth;
         }
 
+        // Rotate Matrix 90 degrees Counter-Clockwise
+        public void RotateCounter()
+        {
+            Queue<int> tempQueue = new Queue<int>();
+            for (int i = 0; i < Depth; i++)
+            {
+                for (int j = 0; j < Width; j++)
+                {
+                    tempQueue.Enqueue(MtxArr[j, i]);
+                }
+            }
+            for (int k = Width; k > 0; k--)
+            {
+                for (int l = 0; l < Depth; l++)
+                {
+                    MtxArr[l, k] = tempQueue.Dequeue();
+                }
+            }
+        }
+
         public void AddToMatrix(int x, int y, int value)
         {
             // If value is 0, set all values in row x and column y to 0, else set value at specified location
