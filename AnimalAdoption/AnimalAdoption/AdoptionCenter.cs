@@ -69,5 +69,15 @@ namespace AnimalAdoption
                 Console.WriteLine("No animals in the Adoption Center!");
             }
         }
+
+        public void DequeueCat()
+        {
+            Cats.Dequeue();
+        }
+
+        public void DequeueDog()
+        {
+            Dogs.Dequeue();
+        }
     }
 }
