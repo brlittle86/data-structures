@@ -49,20 +49,20 @@ namespace AnimalAdoption
             {
                 if (Dogs.Peek().IntakeNumber > Cats.Peek().IntakeNumber)
                 {
-                    Cats.Dequeue();
+                    Console.WriteLine($"You have adopted the cat in position {DequeueCat().IntakeNumber}.");
                 }
                 else
                 {
-                    Dogs.Dequeue();
+                    Console.WriteLine($"You have adopted the dog in position {DequeueDog().IntakeNumber}.");
                 }
             }
             else if (Cats == null && Dogs != null)
             {
-                Dogs.Dequeue();
+                Console.WriteLine($"You have adopted the dog in position {DequeueDog().IntakeNumber}.");
             }
             else if (Cats != null && Dogs == null)
             {
-                Cats.Dequeue();
+                Console.WriteLine($"You have adopted the cat in position {DequeueCat().IntakeNumber}.");
             }
             else
             {
@@ -70,20 +70,18 @@ namespace AnimalAdoption
             }
         }
 
-        public void DequeueCat()
+        public Animal DequeueCat()
         {
-            if (Cats != null)
-            {
-                Cats.Dequeue(); 
-            }
+            
+            return Cats.Dequeue(); 
+            
         }
 
-        public void DequeueDog()
+        public Animal DequeueDog()
         {
-            if (Dogs != null)
-            {
-                Dogs.Dequeue(); 
-            }
+            
+            return Dogs.Dequeue(); 
+            
         }
     }
 }
