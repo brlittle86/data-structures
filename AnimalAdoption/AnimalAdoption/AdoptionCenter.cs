@@ -42,5 +42,32 @@ namespace AnimalAdoption
                 Console.WriteLine("Did not understand your animal species.");
             }
         }
+
+        public void DequeueAny()
+        {
+            if (Dogs != null && Cats != null)
+            {
+                if (Dogs.Peek().IntakeNumber > Cats.Peek().IntakeNumber)
+                {
+                    Cats.Dequeue();
+                }
+                else
+                {
+                    Dogs.Dequeue();
+                }
+            }
+            else if (Cats == null && Dogs != null)
+            {
+                Dogs.Dequeue();
+            }
+            else if (Cats != null && Dogs == null)
+            {
+                Cats.Dequeue();
+            }
+            else
+            {
+                Console.WriteLine("No animals in the Adoption Center!");
+            }
+        }
     }
 }
