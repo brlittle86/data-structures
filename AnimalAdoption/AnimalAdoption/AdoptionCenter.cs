@@ -72,12 +72,18 @@ namespace AnimalAdoption
 
         public void DequeueCat()
         {
-            Cats.Dequeue();
+            if (Cats != null)
+            {
+                Cats.Dequeue(); 
+            }
         }
 
         public void DequeueDog()
         {
-            Dogs.Dequeue();
+            if (Dogs != null)
+            {
+                Dogs.Dequeue(); 
+            }
         }
     }
 }
