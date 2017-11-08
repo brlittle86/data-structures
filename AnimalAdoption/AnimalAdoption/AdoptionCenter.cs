@@ -16,5 +16,31 @@ namespace AnimalAdoption
             Dogs = new Queue<Animal>();
             LinePosition = 0;
         }
+
+        public void EnqueueAnimal(string type)
+        {
+            if (type == "cat")
+            {
+                Cats.Enqueue(new Animal
+                {
+                    Species = type,
+                    IntakeNumber = LinePosition
+                });
+                LinePosition++;
+            }
+            else if (type == "dog")
+            {
+                Dogs.Enqueue(new Animal
+                {
+                    Species = type,
+                    IntakeNumber = LinePosition
+                });
+                LinePosition++;
+            }
+            else
+            {
+                Console.WriteLine("Did not understand your animal species.");
+            }
+        }
     }
 }
